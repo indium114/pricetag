@@ -1,6 +1,6 @@
 # Pricetag
 
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/StikyPiston/pricetag)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/indium114/pricetag)
 
 **Pricetag** is a CLI-based file tagging tool written in Go!
 
@@ -34,7 +34,7 @@ To install, add the repo to your inputs
 
 ```nix
 inputs = {
-  pricetag.url = "github:stikypiston/pricetag"
+  pricetag.url = "github:indium114/pricetag"
 }
 ```
 

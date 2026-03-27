@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
-	"github.com/stikypiston/pricetag/internal"
+	"github.com/indium114/pricetag/internal"
 )
 
 // fileseticonCmd represents the fileseticon command

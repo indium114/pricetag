@@ -1,4 +1,4 @@
-module github.com/stikypiston/pricetag
+module github.com/indium114/pricetag
 
 go 1.25.0
 

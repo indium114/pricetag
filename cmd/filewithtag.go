@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
-	"github.com/stikypiston/pricetag/internal"
+	"github.com/indium114/pricetag/internal"
 )
 
 // filewithtagCmd represents the filewithtag command

@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
-	"github.com/stikypiston/pricetag/internal"
+	"github.com/indium114/pricetag/internal"
 )
 
 // tagclearCmd represents the tagclear command
