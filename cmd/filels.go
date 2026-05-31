@@ -7,8 +7,8 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/spf13/cobra"
 	"github.com/indium114/pricetag/internal"
+	"github.com/spf13/cobra"
 )
 
 var showAll bool
@@ -60,8 +60,37 @@ var filelsCmd = &cobra.Command{
 
 		// Directories
 		for _, d := range dirs {
-			line := fmt.Sprintf(" %s", d.Name())
-			fmt.Println(internal.Colorize(line, "blue"))
+			name := d.Name()
+			fullPath := filepath.Join(dir, name)
+
+			absPath, err := internal.CanonicalPath(fullPath)
+			if err != nil {
+				continue
+			}
+
+			base := fmt.Sprintf(" %s", name)
+			colorBase := internal.Colorize(base, "blue")
+
+			var tagStrings []string
+			if tags, ok := db.Paths[absPath]; ok {
+				sort.Strings(tags)
+
+				for _, tag := range tags {
+					tagColor, exists := db.Tags[tag]
+					if !exists {
+						tagColor = "white"
+					}
+
+					tagText := fmt.Sprintf("[%s]", tag)
+					tagStrings = append(tagStrings, internal.Colorize(tagText, internal.TagColor(tagColor)))
+				}
+			}
+
+			if len(tagStrings) > 0 {
+				fmt.Println(colorBase + " " + strings.Join(tagStrings, " "))
+			} else {
+				fmt.Println(colorBase)
+			}
 		}
 
 		// Files
