@@ -35,7 +35,7 @@
 
           src = self;
 
-          vendorHash = "sha256-y+V1SNOe7N0eNZ+t3THrPAU3q9PHU0wYoH+XcrvGd5s=";
+          vendorHash = "sha256-wluKVS/kxJ6YFM0ZTdDUK9ZwbOfgoVxBNL70WeZMNuc=";
 
           subPackages = [ "." ];
           ldflags = [
