@@ -31,7 +31,7 @@
 
         packages.pricetag = pkgs.buildGoModule {
           pname = "pricetag";
-          version = "2026.06.07-a";
+          version = "2026.10.02-a";
 
           src = self;
 
