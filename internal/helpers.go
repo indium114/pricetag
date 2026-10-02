@@ -18,6 +18,7 @@ const (
 	Yellow TagColor = "yellow"
 	Green  TagColor = "green"
 	Blue   TagColor = "blue"
+	Cyan   TagColor = "cyan"
 	Purple TagColor = "purple"
 	White  TagColor = "white"
 	Black  TagColor = "black"
@@ -26,7 +27,7 @@ const (
 // Check if a tag color is valid or not
 func (c TagColor) IsValid() bool {
 	switch c {
-	case Red, Orange, Yellow, Green, Blue, Purple, White, Black:
+	case Red, Orange, Yellow, Green, Blue, Cyan, Purple, White, Black:
 		return true
 	default:
 		return false
@@ -46,7 +47,7 @@ type PricetagDB struct {
 
 var ValidColors = []string{
 	"red", "orange", "yellow",
-	"green", "blue", "purple",
+	"green", "blue", "cyan", "purple",
 	"black", "white",
 }
 
@@ -172,6 +173,8 @@ func Colorize(text string, c TagColor) string {
 		return color.New(color.FgGreen).Sprint(text)
 	case Blue:
 		return color.New(color.FgBlue).Sprint(text)
+	case Cyan:
+		return color.New(color.FgCyan).Sprint(text)
 	case Purple:
 		return color.New(color.FgMagenta).Sprint(text)
 	case Black:
