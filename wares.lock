@@ -1,0 +1,23 @@
+wares:
+  just:
+    repo: casey/just
+    version: 1.58.0
+    asset: just-1.58.0-x86_64-unknown-linux-musl.tar.gz
+    digest: sha256:4a5cc2f53e6f0f8c59092a6cc38291eb729d46a7dd95d3ae582008881b84931d
+    system: false
+blueprints:
+  _self:
+    repo: https://github.com/indium114/pricetag
+    commit: 91bf031eda8bbaf3371629a528bf218d30b4c31d
+    builtcommit: ""
+    artifacts: []
+    system: false
+  go:
+    repo: https://codeberg.org/indium114/blank-repo
+    commit: 3752c083ee286573af01ccae083ea90a9e585384
+    builtcommit: 3752c083ee286573af01ccae083ea90a9e585384
+    artifacts:
+    - go/bin/go
+    - go/bin/gofmt
+    system: false
+managers: {}
