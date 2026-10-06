@@ -106,6 +106,16 @@ func ResolveDBPath() (string, error) {
 		return localPath, nil
 	}
 
+	// Check for a pricetag db in the parent directories
+	path := cwd
+	for path != "/" {
+		dbPath := filepath.Join(path, dbFilename)
+		if _, err := os.Stat(dbPath); err == nil {
+			return dbPath, nil
+		}
+		path = filepath.Dir(path)
+	}
+
 	// Fallback to home directory
 	home, err := os.UserHomeDir()
 	if err != nil {
